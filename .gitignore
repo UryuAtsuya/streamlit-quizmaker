@@ -1,0 +1,14 @@
+
+*.cache
+
+
+*~
+
+
+*.pyc
+
+
+secrets.toml
+
+
+logs/
