@@ -1,6 +1,4 @@
 import streamlit as st
-# import sys
-# sys.path.append('/usr/local/lib/python3.11/site-packages')
 from openai import OpenAI
 import os
 
@@ -14,9 +12,7 @@ def generate_questions(question_type, num_questions, difficulty, word_list=None)
             model=MODEL,
             messages=[
                 {"role": "system", "content": "あなたは経験豊富な英語教師です。生徒に渡すための問題を作成してください。生徒のレベルに合わせた分かりやすい言葉で問題文を作成してください。問題を生成したら最後に答えをつけてください。"},
-                {"role": "user", "content": 
-                 f"{question_type}の形式で、{difficulty}レベルの生徒向けの英単語問題を{num_questions}問作成してください。\
-                 問題は、以下の単語リストから出題してください:\n{word_list_str}"}
+                {"role": "user", "content": f"{question_type}の形式で、{difficulty}レベルの生徒向けの英単語問題を{num_questions}問作成してください。\問題は、以下の単語リストから出題してください:\n{word_list_str}"}
             ]
         )
     else:
@@ -24,8 +20,7 @@ def generate_questions(question_type, num_questions, difficulty, word_list=None)
             model=MODEL,
             messages=[
                 {"role": "system", "content": "あなたは経験豊富な英語教師です。生徒に渡すための問題を作成してください。生徒のレベルに合わせた分かりやすい言葉で問題文を作成してください。問題を生成したら最後に答えをつけてください。"},
-                {"role": "user", "content": 
-                 f"{question_type}の形式で、{difficulty}レベルの生徒向けの英単語問題を{num_questions}問作成してください。"}
+                {"role": "user", "content": f"{question_type}の形式で、{difficulty}レベルの生徒向けの英単語問題を{num_questions}問作成してください。"}
             ]
         )
     return completion.choices[0].message.content
