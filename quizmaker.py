@@ -3,7 +3,7 @@ from openai import OpenAI
 import os
 
 MODEL = "gpt-4o"
-api_key = se.secrets["OPENAI_API_KEY"]
+api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI(api_key=api_key)
 
 def generate_questions(question_type, num_questions, difficulty, word_list=None):
