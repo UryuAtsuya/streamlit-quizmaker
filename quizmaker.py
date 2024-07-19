@@ -2,7 +2,7 @@ import streamlit as st
 from openai import OpenAI
 import os
 
-MODEL = "gpt-4o"
+MODEL = "gpt-4o-mini"
 api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI(api_key=api_key)
 
